@@ -1,7 +1,10 @@
+import Thumbnaid from "./Thumbnaid"
 
-function Results() {
+function Results({ results }) {
     return (
-        <div>Results</div>
+        <div>{results.map(res => (
+            <Thumbnaid key={res.id} res={res} />
+        ))}</div>
     )
 }
 

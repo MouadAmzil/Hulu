@@ -4,7 +4,7 @@ import Nav from "../components/Nav"
 import Results from '../components/Results'
 import requests from '../utils/requests'
 
-export default function Home({ props }) {
+export default function Home({ results }) {
   return (
     <div >
       <Head>
@@ -14,19 +14,18 @@ export default function Home({ props }) {
       </Head>
       <Header />
       <Nav />
-      <Results result={props} />
+      <Results results={results} />
     </div>
   )
 }
 
 export async function getServerSideProps(context) {
   const gener = context.query.gener;
-  const res = await fetch(
-    `https://api.themoviedb.org/3${requests[gener]?.url || requests.fetchTrending.url}`)
-  const data = await res.json()
+  const request = await fetch(
+    `https://api.themoviedb.org/3${requests[gener]?.url || requests.fetchTrending.url}`).then(res => res.json())
   return {
     props: {
-      result: data
+      results: request.results
     }
   };
 }
