@@ -17,7 +17,7 @@ function Thumbnaid({ res }) {
             />
             <div className="p-2">
                 <p className="truncate max-w-md">{res.overview}</p>
-                <h2 className="mt-1 text-2xl text-white transition-all duration-100 ease-in-out group-hover:font-bold">{res.title || res.original_name}</h2>
+                <h2 className="mt-1 truncate max-w-md text-2xl text-white transition-all duration-100 ease-in-out group-hover:font-bold">{res.title || res.original_name}</h2>
                 <p className="flex items-center capitalize opacity-0 group-hover:opacity-100">
                     {res.media_type && `${res.media_type} •`}{" "}
                     {res.release_date || res.first_air_date} •{" "}
