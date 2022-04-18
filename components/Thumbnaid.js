@@ -19,8 +19,8 @@ const Thumbnail = forwardRef(({ res }, ref) => {
                 title={res.title || res.original_name}
             />
             <div className="p-2">
-                <p className="truncate max-w-md">{res.overview}</p>
-                <h2 className="mt-1 text-2xl truncate max-w-md text-white transition-all duration-100 ease-in-out group-hover:font-bold"
+                <p className="truncate max-w-md group-hover:text-white">{res.overview}</p>
+                <h2 className="mt-1 text-2xl truncate max-w-md text-white transition-all duration-100 ease-in group-hover:font-bold"
                 >
                     {res.title || res.original_name}
                 </h2>
